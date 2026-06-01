@@ -9,6 +9,4 @@ import java.util.UUID;
 public interface EscolaRepository extends JpaRepository<Escola, UUID> {
 
     List<Escola> findAllByAtivoTrue();
-
-    boolean existsByIesId(UUID iesId);
 }
