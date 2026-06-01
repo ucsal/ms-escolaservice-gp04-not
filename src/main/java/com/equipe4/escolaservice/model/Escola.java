@@ -15,7 +15,7 @@ import java.util.UUID;
 public class Escola {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     private String nome;
