@@ -4,6 +4,7 @@ import com.equipe4.escolaservice.dto.CriarEscolaDto;
 import com.equipe4.escolaservice.dto.EscolaResponseDto;
 import com.equipe4.escolaservice.model.Escola;
 import com.equipe4.escolaservice.repository.EscolaRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class EscolaService {
         this.escolaRepository = escolaRepository;
     }
 
+    @Transactional
     public UUID criarEscola(CriarEscolaDto dto) {
         Escola escola = new Escola(dto.nome(), dto.coordenador(), dto.iesId(), dto.iesNome());
         escolaRepository.save(escola);
@@ -37,6 +39,7 @@ public class EscolaService {
                 .toList();
     }
 
+    @Transactional
     public void excluirEscola(UUID id) {
         Escola escola = escolaRepository.findById(id).orElseThrow();
         escola.desativarEscola();
