@@ -40,7 +40,7 @@ As configuracoes ficam em `src/main/resources/application.properties`:
 
 ```properties
 spring.application.name=escola-service
-server.port=8082
+server.port=8083
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/escola_service
 spring.datasource.username=postgres
@@ -59,7 +59,7 @@ Rode:
 
 Ou no IntelliJ, rode a classe `EscolaServiceApplication.java`.
 
-A aplicacao sobe na porta `8082`.
+A aplicacao sobe na porta `8083`.
 
 ---
 
@@ -68,7 +68,7 @@ A aplicacao sobe na porta `8082`.
 ### Criar escola
 
 ```
-POST http://localhost:8082/escola
+POST http://localhost:8083/escola
 
 {
   "nome": "Escola de Engenharia",
@@ -83,7 +83,7 @@ POST http://localhost:8082/escola
 ### Listar escolas
 
 ```
-GET http://localhost:8082/escola
+GET http://localhost:8083/escola
 ```
 
 Exemplo:
@@ -105,7 +105,7 @@ Exemplo:
 ### Excluir escola
 
 ```
-DELETE http://localhost:8082/escola/{id}
+DELETE http://localhost:8083/escola/{id}
 ```
 
 Substitua `{id}` pelo UUID da escola. Retorna status 204 se bem sucedido.
